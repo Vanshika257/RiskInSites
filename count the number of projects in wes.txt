@@ -1,0 +1,71 @@
+count the number of projects in west region
+list the project names in north region
+how many risks are there in each region
+
+For testing your GROUP_BY / AGGREGATE query planner, use prompts that progressively test simple grouping, grouping + count, grouping + numeric aggregation, filtering + grouping, and multiple aggregations.
+Basic GROUP BY tests
+1. Show the number of risks by region.
+2. Count risks for each risk type.
+3. Show the number of risks for each severity level.
+4. Show the number of risks by status.
+5. Show the number of risks by likelihood.
+GROUP BY + COUNT
+6. How many risks are there in each region?
+7. How many risks are there for each project?
+8. How many risks are there for each risk type?
+9. How many Critical risks are there in each region?
+10. How many Safety risks are there in each region?
+GROUP BY + SUM
+11. Show the total financial impact by region.
+12. Show the total financial impact for each risk type.
+13. Show the total impact days by region.
+14. Show the total financial impact by project.
+15. Show the total impact days for each risk type.
+GROUP BY + AVERAGE
+16. Show the average financial impact by region.
+17. Show the average impact days by risk type.
+18. Show the average financial impact for each severity level.
+19. Show the average impact days by region.
+20. Show the average financial impact by project.
+FILTER + GROUP BY
+These are particularly important for testing your planner.
+21. Show the number of risks by risk type in the West region.
+22. Show the number of risks by severity level in the North region.
+23. Show the total financial impact by risk type in the South region.
+24. Show the average impact days by risk type in the East region.
+25. Show the number of Critical risks by region.
+26. Show the total financial impact by region for Safety risks.
+27. Show the number of risks by status in the West region.
+Multiple filters + GROUP BY
+28. For Critical risks in the West region, show the number of risks by risk type.
+29. For Safety risks in the North region, show the total financial impact by project.
+30. For High likelihood risks in the South region, show the average impact days by risk type.
+31. For Critical risks in the East region, show the total financial impact by status.
+Multiple aggregations
+These are excellent tests for your AGGREGATE implementation.
+32. For each region, show the number of risks and total financial impact.
+33. Show the number of risks, total financial impact, and average impact days by region.
+34. For each risk type, show the count of risks and total financial impact.
+35. For each severity level, show the number of risks and average financial impact.
+36. For each region, show total financial impact and total impact days.
+
+
+1. Show the number of risks by region.
+
+2. Show the number of risks by risk type.
+
+3. Show the total financial impact by region.
+
+4. Show the average impact days by risk type.
+
+5. Show the number of Critical risks by region.
+
+6. Show the number of Safety risks by region.
+
+7. Show the total financial impact by risk type in the West region.
+
+8. Show the number of Critical risks by risk type in the North region.
+
+9. For each region, show the number of risks and total financial impact.
+
+10. For each risk type, show the number of risks, total financial impact, and average impact days.

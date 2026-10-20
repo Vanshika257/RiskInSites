@@ -1,0 +1,81 @@
+route = analyser.route_query(user_query)
+
+print("\nROUTE:")
+print(route)
+
+route_plan = json.loads(route)
+
+intent = route_plan["intent"]
+
+if intent == "STRUCTURED":
+
+    query_knowledge = analyser.query_query_knowledge(
+        user_query,
+        top_k=5
+    )
+
+    query_context = analyser.prepare_query_knowledge_context(
+        query_knowledge
+    )
+
+    query_plan = analyser.generate_pandas_query(
+        user_query,
+        query_context
+    )
+
+    print("\nQUERY PLAN:")
+    print(query_plan)
+
+    df = analyser.data_load(csv_file_path)
+
+    result = analyser.execute_query_plan(
+        query_plan
+    )
+
+    print("\nRESULT:")
+    print(result)
+
+
+elif intent == "SEMANTIC":
+
+    results = analyser.query_chroma_db(
+        user_query
+    )
+
+    context = analyser.prepare_context(
+        results
+    )
+
+    summary = analyser.summarize_risks(
+        context,
+        user_query
+    )
+
+    print("\nANSWER:")
+    print(summary)
+
+
+elif intent == "HYBRID":
+
+    print("HYBRID query detected")
+
+    # 1. Apply structured conditions with Pandas.
+    # 2. Use the semantic_question for ChromaDB.
+    # 3. Intersect/merge the candidate risk IDs.
+    # 4. Send the final evidence to the LLM.
+
+
+elif intent == "GENERAL":
+
+    response = ollama.chat(
+        model="llama3.2",
+        messages=[
+            {
+                "role": "user",
+                "content": user_query
+            }
+        ]
+    )
+
+    print("\nANSWER:")
+    print(response["message"]["content"])

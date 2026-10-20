@@ -1,0 +1,15 @@
+GROUP BY + COUNT
+6. How many risks are there in each region?
+7. How many risks are there for each project?
+8. How many risks are there for each risk type?
+9. How many Critical risks are there in each region?
+10. How many Safety risks are there in each region?
+Which projects are at risk of delay in East Region?(getting results)
+What are the top 6 risks by financial impact in all regions?(getting results)
+
+
+semantic
+Find risks involving structural instability.
+
+
+Summarize latest high-severity safety risks of all projects?
